@@ -26,7 +26,7 @@ If you'd like to contribute to the ZeroDrag project, here's how to set up a loca
 Clone the repository:
 
 Bash
-git clone https://github.com/[your-username]/ZeroDrag.git
+git clone https://github.com/gabriele-sala/Zero-Drag.git
 Usa il codice con cautela. Scopri di più
 Install dependencies:
 
