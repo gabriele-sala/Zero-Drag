@@ -38,9 +38,6 @@ Start the development server:
 
 Bash
 npm start
-Usa il codice con cautela. Scopri di più
-Contributing
-We welcome contributions from the community! Feel free to open issues for bug reports or feature suggestions. For code contributions, please submit pull requests.
 
 ## Important Notes
 ZeroDrag provides a simplified aerodynamic drag calculation. Real-world F1 aerodynamics are incredibly complex and depend on numerous additional factors.
