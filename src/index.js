@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DragCalculator from './DragCalculator'; // Import your component
+import App from './App'; 
+import './index.css'; // Add your global styles 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<DragCalculator />);
+root.render(<App />); 
+
