@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
+import * as React from 'react';
+import { useState } from 'react';
+import { TextField, Button, Typography } from '@mui/material';
 
 function DragCalculator() {
-  const [velocity, setVelocity] = useState(0); 
-  const [frontalArea, setFrontalArea] = useState(0); 
-  const [dragCoefficient, setDragCoefficient] = useState(0);
-  const [airDensity, setAirDensity] = useState(1.225); 
+  const [velocity, setVelocity] = useState(0);
+  const [frontalArea, setFrontalArea] = useState(1.5); // Default (m^2)
+  const [dragCoefficient, setDragCoefficient] = useState(0.8); // Default 
+  const [airDensity, setAirDensity] = useState(1.225); // Default (kg/m^3)
   const [dragForce, setDragForce] = useState(0);
 
   const calculateDrag = () => {
@@ -17,24 +15,13 @@ function DragCalculator() {
   };
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', p: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        F1 Aerodynamic Drag Calculator
-      </Typography>
-      <TextField 
-        label="Velocity (km/h)" 
-        type="number"
-        variant="standard" 
-        margin="normal"
-        value={velocity}
-        onChange={(e) => setVelocity(e.target.value)}
-      />
-      {/* Other TextFields for frontal area, drag coefficient, air density */}
-      <Button variant="contained" onClick={calculateDrag}>Calculate</Button> 
-      <Typography variant="h5" gutterBottom component="div" sx={{marginTop: 2}}>
-        Drag Force: {dragForce} N
-      </Typography>
-    </Box>
+    <div> 
+      <TextField label="Velocity (km/h)" type="number" value={velocity} onChange={(e) => setVelocity(e.target.value)} />
+      <TextField label="Frontal Area (m^2)" type="number" value={frontalArea} onChange={(e) => setFrontalArea(e.target.value)} />
+      <TextField label="Drag Coefficient" type="number" value={dragCoefficient} onChange={(e) => setDragCoefficient(e.target.value)} />
+      <Button variant="contained" onClick={calculateDrag}>Calculate</Button>
+      <Typography variant="h6">Drag Force: {dragForce} N</Typography> 
+    </div>
   );
 }
 
